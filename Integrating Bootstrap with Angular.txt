@@ -1,0 +1,24 @@
+ - Install Bootstrap, use in appComponent.
+   - https://www.techiediaries.com/angular-bootstrap-ui/
+   - https://valor-software.com/ngx-bootstrap/
+   - https://ng-bootstrap.github.io/
+   
+   - Steps:
+	-- npm install bootstrap --save
+		-- you can import it in angular.json in styles
+		-- OR Import it in src/style.css (@import "~bootstrap/dist/css/bootstrap.css";  )
+
+	-- Install BS Angular Components
+	-- Intall ng-bootstrap
+		--  npm install --save @ng-bootstrap/ng-bootstrap
+		-- in app.module: import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
+	-- (OR) Install ngx-bootstrap
+		-- npm install ngx-bootstrap --save and then add boostrap CSS
+
+
+-------------------------------------
+Other Resources:
+   - https://www.techiediaries.com/angular-bootstrap/
+   - https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/
+		-- (OR) ng add ngx-bootstrap 	
+			-- The CLI will take care of installing all the required files and update it any necessary configuration files in your behalf.
