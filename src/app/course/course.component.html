@@ -1,0 +1,26 @@
+
+<div class="container">
+    <h1>Create a course</h1> 
+    <form [formGroup]="form" (submit)="print()">
+        <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input type="text" formControlName="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">descrption</label>
+        <input type="text" formControlName="descrpition"  class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+        <label class="form-check-label" for="exampleCheck1">Hours</label>
+        <input type="number" formControlName="hours"  (keyup)="Show()" class="form-control" id="exampleCheck1">
+    </div>
+    <div class="mb-3 form-check" *ngIf="ToShow">
+        <label class="form-check-label" for="exampleCheck1">Trainer name</label>
+        <select formControlName="Trainername" class="form-control">
+            <option *ngFor="let item of Trainers;let now = index">{{ now+1}} {{ item}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+</div>
