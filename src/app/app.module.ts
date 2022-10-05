@@ -8,6 +8,7 @@ import { StudentComponent } from './student/student.component';
 import { CourseComponent } from './course/course.component';
 import { ProductlistComponent } from './component/productlist/productlist.component';
 import { ImgboxDirective } from './Directives/imgbox.directive';
+import { TranslatePipe } from './Pipes/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ImgboxDirective } from './Directives/imgbox.directive';
     StudentComponent,
     CourseComponent,
     ProductlistComponent,
-    ImgboxDirective
+    ImgboxDirective,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
