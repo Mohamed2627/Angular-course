@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './component/demo.compoment';
 import { StudentComponent } from './student/student.component';
 import { CourseComponent } from './course/course.component';
+import { ProductlistComponent } from './component/productlist/productlist.component';
+import { ImgboxDirective } from './Directives/imgbox.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     StudentComponent,
-    CourseComponent
+    CourseComponent,
+    ProductlistComponent,
+    ImgboxDirective
   ],
   imports: [
     BrowserModule,
