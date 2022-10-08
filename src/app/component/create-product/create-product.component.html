@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="row g-3" [formGroup]="addform" (ngSubmit)="add()" >
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">name</label>
+      <input type="text" class="form-control" formControlName="name">
+        <div  *ngIf="addform.get('name')?.touched && addform.get('name')?.invalid">
+          <span class="text-danger" *ngIf="addform.get('name')?.errors?.['required']">must enter a name</span>
+          <span class="text-danger" *ngIf="addform.get('name')?.errors?.['minlength']">must enter a name with al least 4 character</span>
+        </div>
+      </div>
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">image URL</label>
+      <input type="text" class="form-control"  formControlName="img">
+      <div  *ngIf="addform.get('img')?.touched && addform.get('img')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('img')?.errors?.['required']">must enter a img</span>
+        <span class="text-danger" *ngIf="addform.get('img')?.errors?.['pattern']">must be Url</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom03" class="form-label">Category</label>
+      <select class="form-select" formControlName="categoryId">
+        <option selected disabled value="">Choose...</option>
+        <option *ngFor="let cat of category"  [value]="cat.id">{{cat.name}}</option>
+      </select>
+      <div  *ngIf="addform.get('categoryId')?.touched && addform.get('categoryId')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('categoryId')?.errors?.['required']">must Choose an item</span>
+       </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom04" class="form-label" >Quantitiy</label>
+      <input type="number" class="form-control" formControlName="qty">
+      <div  *ngIf="addform.get('qty')?.touched && addform.get('qty')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('qty')?.errors?.['required']">must enter a qty</span>
+        <span class="text-danger" *ngIf="addform.get('qty')?.errors?.['min']">must enter a Qty with al least 1</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom05" class="form-label">Price</label>
+      <input type="text" class="form-control" formControlName="price">
+      <div  *ngIf="addform.get('price')?.touched && addform.get('price')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('price')?.errors?.['required']">must enter a price</span>
+        <span class="text-danger" *ngIf="addform.get('price')?.errors?.['min']">must enter a price with al least 1</span>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <button class="btn btn-primary" type="submit" [disabled]="addform.invalid">Submit form</button>
+    </div>
+  </form>
+</div>

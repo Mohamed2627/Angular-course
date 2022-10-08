@@ -10,6 +10,15 @@ import { ProductlistComponent } from './component/productlist/productlist.compon
 import { ImgboxDirective } from './Directives/imgbox.directive';
 import { TranslatePipe } from './Pipes/translate.pipe';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { CreateProductComponent } from './component/create-product/create-product.component';
+import { ProductService } from './service/product-service.service';
+import { ProductChildComponent } from './component/product-child/product-child.component';
+import { ProductParentComponent } from './component/product-parent/product-parent.component';
+import { AppRoutingModule } from './app-rouring.module';
+import { MainLayoutComponent } from './component/main-layout/main-layout.component';
+import { DashbourdComponent } from './component/dashbourd/dashbourd.component';
+import { DashbourdLayoutComponent } from './component/dashbourd-layout/dashbourd-layout.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +29,25 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     ProductlistComponent,
     ImgboxDirective,
     TranslatePipe,
-    NavbarComponent
+    NavbarComponent,
+    ProductlistComponent,
+    CreateProductComponent,
+    ProductChildComponent,
+    ProductParentComponent,
+    MainLayoutComponent,
+    DashbourdComponent,
+    DashbourdLayoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
-  
+    ReactiveFormsModule,
+  AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    // ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
