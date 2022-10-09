@@ -1,6 +1,7 @@
 import {  createComponent, NgModule} from "@angular/core";
 import {  RouterModule,Routes} from "@angular/router";
 import { CreateProductComponent } from "./component/create-product/create-product.component";
+import { CreateStudentComponent } from "./component/create-student/create-student.component";
 import { DashbourdLayoutComponent } from "./component/dashbourd-layout/dashbourd-layout.component";
 import { DashbourdComponent } from "./component/dashbourd/dashbourd.component";
 import { HomeComponent } from "./component/home/home.component";
@@ -9,6 +10,8 @@ import { NotfoundComponent } from "./component/notfound/notfound.component";
 import { ProductDetailsComponent } from "./component/product-details/product-details.component";
 import { ProductParentComponent } from "./component/product-parent/product-parent.component";
 import { ProductlistComponent } from "./component/productlist/productlist.component";
+import { StudentListComponent } from "./component/student-list/student-list.component";
+import { StudentComponent } from "./component/Student/Student.component";
 
 let routes:Routes=[
     {path:'',component:MainLayoutComponent,
@@ -17,11 +20,17 @@ let routes:Routes=[
         {path:"home",component:HomeComponent},
         {path:'product',component:ProductParentComponent},
         {path:'product/:pid',component:ProductDetailsComponent},
+        
+    ]},
+    {path:'students',component:MainLayoutComponent,children:[
+        {path:'',component:StudentListComponent,pathMatch:"full"},
+        {path:'create',component:CreateStudentComponent,pathMatch:"full"},
+        {path:':id',component:StudentComponent,pathMatch:"full"},
     ]},
     {path:'dashbourd',component:DashbourdLayoutComponent,
     children:[
         // {path :"dashbourd",redirectTo:"/dashbourd/home",pathMatch:"full"},
-        {path:"home",component:DashbourdComponent},
+        {path:"home",component:DashbourdComponent},//dashbourd/home
         {path:'create',component:CreateProductComponent},
         {path:'product',component:ProductlistComponent},
     ]},

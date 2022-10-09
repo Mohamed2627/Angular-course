@@ -1,0 +1,53 @@
+<div class="container">
+  <form class="row g-3" [formGroup]="addform" (ngSubmit)="add()" >
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">FirstName</label>
+      <input type="text" class="form-control" formControlName="FirstName">
+        <div  *ngIf="addform.get('FirstName')?.touched && addform.get('FirstName')?.invalid">
+          <span class="text-danger" *ngIf="addform.get('FirstName')?.errors?.['required']">must enter a FirstName</span>
+          <span class="text-danger" *ngIf="addform.get('FirstName')?.errors?.['minlength']">must enter a name with al least 5 character</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">LastName</label>
+        <input type="text" class="form-control" formControlName="LastName">
+          <div  *ngIf="addform.get('LastName')?.touched && addform.get('LastName')?.invalid">
+            <span class="text-danger" *ngIf="addform.get('LastName')?.errors?.['required']">must enter a LastName</span>
+            <span class="text-danger" *ngIf="addform.get('LastName')?.errors?.['minlength']">must enter a name with al least 5 character</span>
+          </div>
+        </div>
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">Age</label>
+      <input type="number" class="form-control"  formControlName="Age">
+      <div  *ngIf="addform.get('Age')?.touched && addform.get('Age')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('Age')?.errors?.['required']">must enter a Age</span>
+      </div>
+    </div>
+   
+    <div class="col-md-4">
+      <label for="validationCustom04" class="form-label" >National ID</label>
+      <input type="text" class="form-control" formControlName="NationalID">
+      <div  *ngIf="addform.get('NationalID')?.touched && addform.get('NationalID')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('NationalID')?.errors?.['required']">must enter a NationalID</span>
+        <span class="text-danger" *ngIf="addform.get('NationalID')?.errors?.['minlength']">must enter a NationalID with al least 1</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom05" class="form-label">Mobile</label>
+      <input type="text" class="form-control" formControlName="Mobile">
+      <div  *ngIf="addform.get('Mobile')?.touched && addform.get('Mobile')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('Mobile')?.errors?.['required']">must enter a Mobile</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom05" class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="Email">
+      <div  *ngIf="addform.get('Email')?.touched && addform.get('Email')?.invalid">
+        <span class="text-danger" *ngIf="addform.get('Email')?.errors?.['required']">must enter a Email</span>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <button class="btn btn-primary" type="submit" [disabled]="addform.invalid">Submit form</button>
+    </div>
+  </form>
+</div>
