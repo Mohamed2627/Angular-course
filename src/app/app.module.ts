@@ -21,6 +21,10 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { CreateStudentComponent } from './component/create-student/create-student.component';
 import { StudentListComponent } from './component/student-list/student-list.component';
 import { StudentComponent } from './component/Student/Student.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
+import { LogoutComponent } from './component/logout/logout.component';
+import { ProfileComponent } from './component/Profile/Profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { StudentComponent } from './component/Student/Student.component';
     ProductDetailsComponent,
     CreateStudentComponent,
     StudentListComponent,
-    StudentComponent
+    StudentComponent,
+    LoginComponent,
+    RegisterComponent,
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

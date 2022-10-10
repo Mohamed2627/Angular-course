@@ -1,0 +1,26 @@
+<form class="row m-5" [formGroup]="addform" (ngSubmit)="add()">
+  <div class="mb-3 row">
+    <label for="" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="Name">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="" class="col-sm-2 col-form-label">User Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="UserName">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" formControlName="Password">
+    </div>
+  </div>
+  <div class="col-12 p-2 text-center">
+    <button [disabled]="addform.invalid" class="btn btn-primary" type="submit">Join</button>
+  </div>
+  <div class="col-12 p-2 text-center">
+    <a class="card-link" routerLink="/login">Login i have an Account</a>
+  </div>
+  </form>

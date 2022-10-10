@@ -31,8 +31,8 @@ export class StudentListComponent implements OnInit,OnDestroy {
       {
         next: (response) => {
           console.log(response)
-          this.list = response.Data;
-          this.isloading = false;
+          this.list = response.Data ;
+          // this.isloading = false;
         },
         error: (error) => {
           console.log(error)

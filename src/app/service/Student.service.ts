@@ -13,7 +13,7 @@ import { APIResponse } from "../ViewModel/Apiresult";
 export class StudentService {
     constructor(private http: HttpClient) {
     }
-    getAll(): Observable<APIResponse<IStudent[]>> {
+    getAll(){
         //    return this.http.get<APIResponse>("https://api.mohamed-sadek.com/Job/Get")
         return this.http.get<APIResponse<IStudent[]>>(environment.APIURl + "/student/get")
         /// return this.http.get("https://api.mohamed-sadek.com/student/get") not recommended

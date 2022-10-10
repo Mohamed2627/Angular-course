@@ -5,11 +5,15 @@ import { CreateStudentComponent } from "./component/create-student/create-studen
 import { DashbourdLayoutComponent } from "./component/dashbourd-layout/dashbourd-layout.component";
 import { DashbourdComponent } from "./component/dashbourd/dashbourd.component";
 import { HomeComponent } from "./component/home/home.component";
+import { LoginComponent } from "./component/login/login.component";
+import { LogoutComponent } from "./component/logout/logout.component";
 import { MainLayoutComponent } from "./component/main-layout/main-layout.component";
 import { NotfoundComponent } from "./component/notfound/notfound.component";
 import { ProductDetailsComponent } from "./component/product-details/product-details.component";
 import { ProductParentComponent } from "./component/product-parent/product-parent.component";
 import { ProductlistComponent } from "./component/productlist/productlist.component";
+import { ProfileComponent } from "./component/Profile/Profile.component";
+import { RegisterComponent } from "./component/register/register.component";
 import { StudentListComponent } from "./component/student-list/student-list.component";
 import { StudentComponent } from "./component/Student/Student.component";
 
@@ -20,6 +24,10 @@ let routes:Routes=[
         {path:"home",component:HomeComponent},
         {path:'product',component:ProductParentComponent},
         {path:'product/:pid',component:ProductDetailsComponent},
+        {path:'login',component:LoginComponent},
+        {path:'register',component:RegisterComponent},
+        {path:'profile',component:ProfileComponent},
+        {path:'logout',component:LogoutComponent},
         
     ]},
     {path:'students',component:MainLayoutComponent,children:[

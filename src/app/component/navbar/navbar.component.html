@@ -21,8 +21,17 @@
               <li><a class="dropdown-item" routerLink="/students/create">Create Student</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <li *ngIf="!islogged" class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li *ngIf="!islogged" class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/register" routerLinkActive="active">Register</a>
+          </li>
+          <li *ngIf="islogged" class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/profile" routerLinkActive="active">Profile</a>
+          </li>
+          <li *ngIf="islogged" class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/logout" routerLinkActive="active">Logout</a>
           </li>
         </ul>
         <form class="d-flex">
