@@ -22,7 +22,7 @@
             </ul>
           </li>
           <li *ngIf="!islogged" class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active">Login</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/login','']" routerLinkActive="active">Login</a>
           </li>
           <li *ngIf="!islogged" class="nav-item">
             <a class="nav-link" aria-current="page" routerLink="/register" routerLinkActive="active">Register</a>

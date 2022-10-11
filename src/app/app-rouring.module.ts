@@ -16,6 +16,7 @@ import { ProfileComponent } from "./component/Profile/Profile.component";
 import { RegisterComponent } from "./component/register/register.component";
 import { StudentListComponent } from "./component/student-list/student-list.component";
 import { StudentComponent } from "./component/Student/Student.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 let routes:Routes=[
     {path:'',component:MainLayoutComponent,
@@ -24,13 +25,14 @@ let routes:Routes=[
         {path:"home",component:HomeComponent},
         {path:'product',component:ProductParentComponent},
         {path:'product/:pid',component:ProductDetailsComponent},
-        {path:'login',component:LoginComponent},
+        {path:'login/:path',component:LoginComponent},
         {path:'register',component:RegisterComponent},
-        {path:'profile',component:ProfileComponent},
-        {path:'logout',component:LogoutComponent},
+        {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+        {path:'logout',component:LogoutComponent,canActivate:[AuthGuard]},
         
     ]},
-    {path:'students',component:MainLayoutComponent,children:[
+    {path:'students',component:MainLayoutComponent,canActivate:[AuthGuard]
+    ,children:[
         {path:'',component:StudentListComponent,pathMatch:"full"},
         {path:'create',component:CreateStudentComponent,pathMatch:"full"},
         {path:':id',component:StudentComponent,pathMatch:"full"},

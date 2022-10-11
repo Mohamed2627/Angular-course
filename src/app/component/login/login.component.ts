@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/service/Auth.service';
 export class LoginComponent implements OnInit {
     addform!:FormGroup;
     isValid=false;
+
     returnURL:string = "";
     constructor(private router:Router,private activate:ActivatedRoute,private Auth:AuthService) {
      this.addform = new FormGroup({
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
       Password:new FormControl("",[Validators.required]),})}
   
     ngOnInit() {
+      this.returnURL= this.activate.snapshot.paramMap.get("path")??""
     }
     add(){
       let user :UserLogin = this.addform.value as UserLogin
@@ -26,7 +28,12 @@ export class LoginComponent implements OnInit {
         if(response.Success){
           this.Auth.setToken(response.Data)
           this.Auth.setLoggedStatus(true)
-          this.router.navigateByUrl("/profile")
+          if(this.returnURL == '')
+            this.router.navigateByUrl("/")
+            else
+            this.router.navigateByUrl(this.returnURL)
+
+            
         }
         else(
           this.isValid = true

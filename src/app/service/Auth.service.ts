@@ -28,13 +28,8 @@ export class AuthService {
     return this.http.post<APIResponse<boolean>>(`${environment.APIURl}/User/POST`, user)
   }
   logout() {
-    let options = {
-      headers: new HttpHeaders({
-        'Content-Type': "application/json",
-        'token': this.getToken()!
-      })
-    }
-    return this.http.post(`${environment.APIURl}/User/logout`, {}, options)
+    
+    return this.http.post(`${environment.APIURl}/User/logout`, {})
   }
   isLogged(): boolean {
     if (localStorage.getItem("token") == null) return false

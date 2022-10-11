@@ -10,7 +10,7 @@ import { ImgboxDirective } from './Directives/imgbox.directive';
 import { TranslatePipe } from './Pipes/translate.pipe';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { CreateProductComponent } from './component/create-product/create-product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProductChildComponent } from './component/product-child/product-child.component';
 import { ProductParentComponent } from './component/product-parent/product-parent.component';
 import { AppRoutingModule } from './app-rouring.module';
@@ -25,6 +25,10 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { ProfileComponent } from './component/Profile/Profile.component';
+import { LoaderInterceptor } from './service/API/loader.interceptor';
+import { AuthInterceptor } from './service/API/auth.interceptor';
+import { HttpIntercepters } from './service/API/httpInetcebtors';
+import { LoaderComponent } from './component/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,8 @@ import { ProfileComponent } from './component/Profile/Profile.component';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { ProfileComponent } from './component/Profile/Profile.component';
   ],
   providers: [
     // ProductService
+    HttpIntercepters
   ],
   bootstrap: [AppComponent]
 })
